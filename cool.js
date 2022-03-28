@@ -1,9 +1,9 @@
 /* monthy hall problem simulator Laszlo Dudas 2020 */ 
 console.log((()=>{
-   const prepare=()=>{
+    const prepare=()=>{
         let o=[0,0,0,0,0];
         for(let i =0;100>i;i++)
-             o[Math.floor(Math.random()*5)]++;
+            o[Math.floor(Math.random()*5)]++;
         return o;
     };
     const calculator=function(){
