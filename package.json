@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/Soldy/monthy/issues"
   },
-  "homepage": "https://github.com/Soldy/Monthy#readme",
+  "homepage": "https://github.com/Soldy/monthy#readme",
   "devDependencies": {
     "nanoTest": "0.9.9-beta28"
   },
