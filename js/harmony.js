@@ -40,14 +40,14 @@ const effectCheck = function(){
             _last_effect[c]++;
         if (typeof _distances_effect[i][_last_effect[i]] === 'undefined')
             _distances_effect[i][_last_effect[i]]=0;
-        _distances_effect[i][_last_effect[i]]++; 
-        _last_effect[i] = 0; 
+        _distances_effect[i][_last_effect[i]]++;
+        _last_effect[i] = 0;
 
         _count_effect[i]++;
         if (last === i){
            repeat ++;
         }else{
-           if (repeat > _max_repeat_effect[last])   
+           if (repeat > _max_repeat_effect[last])
                _max_repeat_effect[last] = parseInt(repeat);
            last = parseInt(i);
            repeat = 1;
@@ -70,12 +70,26 @@ const analyze = function(){
     }
 };
 
+const showDistanceEffect = function(){
+    out = 'distance effect \n';
+    for (let a = 1; _distances_effect.length > a ; a++){
+        out += ('\n'+a.toString()+' distancer \n');
+        for (let i = 1; _distances_effect[a].length > i ; i++){
+            if (typeof _distances_effect[a][i] === 'undefined')
+                _distances_effect[a][i] = 0;
+            out += (i.toString()+' | '+_distances_effect[a][i]+'\n');
+        }
+    }
+    return out;
+};
 
-generatorOfThree(10000);
+generatorOfThree(100);
+
 console.log(effectCheck()*1000);
 analyze();
 console.log(_max_distance_effect);
 console.log(_count_effect);
 console.log(_max_repeat_effect);
-console.log(_distances_effect); 
-console.log(_percent_effect); 
+console.log(_distances_effect);
+console.log(showDistanceEffect());
+console.log(_percent_effect);
